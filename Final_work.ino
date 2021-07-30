@@ -39,7 +39,7 @@ while (WiFi.status() != WL_CONNECTED)
   Serial.println(WiFi.localIP());
   server.on("/", []()
   {
-    page = "<html><head><title>Smart Energy Meter using IoT</title></head><style type=\"text/css\">";
+    page = "<html><head><title>Smart Energy Meter using IoT</title></head><style type=\"tet/css\">";
     page += "table{border-collapse: collapse;}th {background-color:  green ;color: white;}table,td {border: 4px solid black;font-size: x-large;";
     page += "text-align:center;border-style: groove;border-color: rgb(255,0,0);}</style><body><center>";
     page += "<h1>Smart Energy Meter using IoT</h1><br><br><table style=\"width: 1200px;height: 450px;\"><tr>";
@@ -107,54 +107,4 @@ void loop() {
     else{
       digitalWrite(relay2,HIGH);
     }
-   /* float voltage = pzem.voltage();
-    if(voltage != NAN){
-        Serial.print("Voltage: ");
-        Serial.print(voltage); Serial.println("V");
-    } else {
-        Serial.println("Error reading voltage");
-    }
 
-    float current = pzem.current();
-    if(current != NAN){
-        Serial.print("Current: ");
-        Serial.print(current); Serial.println("A");
-    } else {
-        Serial.println("Error reading current");
-    }
-
-    float power = pzem.power();
-    if(current != NAN){
-        Serial.print("Power: "); Serial.print(power);
-        Serial.println("W");
-    } else {
-        Serial.println("Error reading power");
-    }
-
-    float energy = pzem.energy();
-    if(current != NAN){
-        Serial.print("Energy: "); Serial.print(energy,3);
-        Serial.println("kWh");
-    } else {
-        Serial.println("Error reading energy");
-    }
-
-    float frequency = pzem.frequency();
-    if(current != NAN){
-        Serial.print("Frequency: "); Serial.print(frequency, 1);
-        Serial.println("Hz");
-    } else {
-        Serial.println("Error reading frequency");
-    }
-
-    float pf = pzem.pf();
-    if(current != NAN){
-        Serial.print("PF: "); 
-        Serial.println(pf);
-    } else {
-        Serial.println("Error reading power factor");
-    }
-
-    Serial.println();
-    delay(2000);*/
-}
