@@ -39,9 +39,45 @@ while (WiFi.status() != WL_CONNECTED)
   Serial.println(WiFi.localIP());
   server.on("/", []()
   {
-    page = "<html><head><title>Smart Energy Meter using IoT</title></head><style type=\"text/css\">";
-    page += "table{border-collapse: collapse;}th {background-color:  green ;color: white;}table,td {border: 4px solid black;font-size: x-large;";
-    page += "text-align:center;border-style: groove;border-color: rgb(255,0,0);}</style><body><center>";
+    page = "<html><head><title>Smart Energy Meter using IoT</title></head><style type=\"text/css\"> <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap\" rel=\"stylesheet\">";
+    page += "table{border-collapse: collapse;}th {background-color:  green ;color: white;}.styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        border-radius: 20px;
+        font-size: 1em;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+    
+    .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+    }
+    
+    .styled-table tr:first-child {
+        font-size: 1.2em;
+    }
+    
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+    }
+    
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    
+    .styled-table tbody tr:last-of-type {
+        border: none;
+    };"
+    page += "</style><body><center>";
     page += "<h1>Smart Energy Meter using IoT</h1><br><br><table style=\"width: 1200px;height: 450px;\"><tr>";
     page += "<th>Parameters</th><th>Value</th><th>Units</th></tr><tr><td>Voltage</td><td>"+String(voltage)+"</td><td>Volts</td></tr>";
     page += "<tr><td>Current</td><td>"+String(current)+"</td><td>Amperes</td></tr><tr><td>Power Factor</td><td>"+String(pf)+"</td><td>XXXX</td>";
