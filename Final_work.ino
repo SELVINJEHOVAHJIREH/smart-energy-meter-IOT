@@ -76,7 +76,7 @@ while (WiFi.status() != WL_CONNECTED)
     
     .styled-table tbody tr:last-of-type {
         border: none;
-    };"
+    };";
     page += "</style><body><center>";
     page += "<h1>Smart Energy Meter using IoT</h1><br><br><table style=\"width: 1200px;height: 450px;\"><tr>";
     page += "<th>Parameters</th><th>Value</th><th>Units</th></tr><tr><td>Voltage</td><td>"+String(voltage)+"</td><td>Volts</td></tr>";
